@@ -1,0 +1,67 @@
+Frontend/node_modules
+Frontend/.pnp
+Frontend/.pnp.js
+
+# testing
+Frontend/coverage
+
+# production
+Frontend/build
+
+# misc
+Frontend/.DS_Store
+Frontend/.env.local
+Frontend/.env.development.local
+Frontend/.env.test.local
+Frontend/.env.production.local
+
+Frontend/npm-debug.log*
+Frontend/yarn-debug.log*
+Frontend/yarn-error.log*
+# === Frontend .gitignore ===
+/Frontend/node_modules
+/Frontend/.pnp
+/Frontend/.pnp.js
+
+# testing
+/Frontend/coverage
+
+# production
+/Frontend/build
+
+# misc
+/Frontend/.DS_Store
+/Frontend/.env.local
+/Frontend/.env.development.local
+/Frontend/.env.test.local
+/Frontend/.env.production.local
+
+/Frontend/npm-debug.log*
+/Frontend/yarn-debug.log*
+/Frontend/yarn-error.log*
+
+# === Backend .gitignore ===
+/Backend/target/
+/Backend/.idea/
+/Backend/*.iml
+/Backend/.classpath
+/Backend/.project
+/Backend/.settings/
+/Backend/.DS_Store
+/Backend/.env
+/Backend/logs/
+/Backend/*.log
+/Backend/*.tmp
+
+# Maven output
+/Backend/logs/
+/Backend/.mvn/wrapper/maven-wrapper.jar
+
+# Ignore IntelliJ files
+/Backend/.idea/
+/Backend/*.iml
+
+# OS generated files
+/Backend/.DS_Store
+/Backend/.env*
+
