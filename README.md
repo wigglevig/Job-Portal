@@ -2,6 +2,26 @@
 
 A full-stack job portal application built with Spring Boot (Backend) and React (Frontend). This application allows users to browse, search, create, update, and delete job postings with a modern and intuitive user interface.
 
+## 📸 Screenshots
+
+### Home Page - Job Listings
+<div align="center">
+  <img src="./images/job-portal-screenshot.png" alt="Job Portal Home Page" width="100%"/>
+</div>
+*Home page showing the modern UI with gradient background, job cards, search functionality, and responsive design*
+
+### Create Job Post Page
+<div align="center">
+  <img src="./images/create-job-post-screenshot.png" alt="Create Job Post Form" width="100%"/>
+</div>
+*Create job post form with modern card design, gradient header, and intuitive skill selection*
+
+> **📸 To add your screenshots**: 
+> - Home page: Save as `images/job-portal-screenshot.png`
+> - Create page: Save as `images/create-job-post-screenshot.png`
+> 
+> For GitHub, you can also use raw GitHub URLs: `https://raw.githubusercontent.com/yourusername/job-portal/main/images/filename.png`
+
 ## 🚀 Features
 
 - **Job Posting Management**: Complete CRUD (Create, Read, Update, Delete) operations for job posts
@@ -196,10 +216,11 @@ Content-Type: application/json
   - Empty state messages for better UX
 
 - **Create Job**: 
-  - Modern form design with gradient header
+  - Modern form design with gradient header (see screenshot above)
   - Material-UI checkboxes for skill selection
   - Form validation and error handling
   - Clean, intuitive interface
+  - Centered card layout with smooth transitions
 
 - **Edit Job**: 
   - Pre-populated form with existing job data
