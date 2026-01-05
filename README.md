@@ -51,12 +51,12 @@ cd job-portal
 1. Install and start PostgreSQL
 2. Create a new database:
 ```sql
-CREATE DATABASE wiggle;
+CREATE DATABASE jobportal;
 ```
 
 3. Update database credentials in `Backend/src/main/resources/application.properties`:
 ```properties
-spring.datasource.url=jdbc:postgresql://localhost:5432/wiggle
+spring.datasource.url=jdbc:postgresql://localhost:5432/jobportal
 spring.datasource.username=your_username
 spring.datasource.password=your_password
 ```
