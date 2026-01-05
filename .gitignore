@@ -65,3 +65,6 @@ Frontend/yarn-error.log*
 /Backend/.DS_Store
 /Backend/.env*
 
+# Application properties with sensitive data
+/Backend/src/main/resources/application.properties
+

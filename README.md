@@ -76,12 +76,27 @@ cd job-portal
 CREATE DATABASE jobportal;
 ```
 
-3. Update database credentials in `Backend/src/main/resources/application.properties`:
-```properties
-spring.datasource.url=jdbc:postgresql://localhost:5432/jobportal
-spring.datasource.username=your_username
-spring.datasource.password=your_password
-```
+3. Configure database credentials:
+   - Copy the example properties file:
+     ```bash
+     cp Backend/src/main/resources/application.properties.example Backend/src/main/resources/application.properties
+     ```
+   - Edit `Backend/src/main/resources/application.properties` and update with your credentials:
+     ```properties
+     spring.datasource.url=jdbc:postgresql://localhost:5432/jobportal
+     spring.datasource.username=your_username
+     spring.datasource.password=your_password
+     ```
+   
+   **⚠️ Security Note**: The `application.properties` file is gitignored to protect your credentials. Never commit sensitive information to version control.
+
+   **Alternative - Using Environment Variables** (Recommended for production):
+   ```bash
+   export DATABASE_URL=jdbc:postgresql://localhost:5432/jobportal
+   export DATABASE_USERNAME=your_username
+   export DATABASE_PASSWORD=your_password
+   ```
+   The application will automatically use these environment variables if set.
 
 ### 3. Backend Setup
 
@@ -269,16 +284,58 @@ npm run build
 ```
 The production build will be in `Frontend/build/`
 
-## 🔒 Environment Variables
+## 🔒 Security & Environment Variables
 
-For production deployment, consider using environment variables instead of hardcoding credentials:
+### Protecting Sensitive Data
 
-**Backend** (`application.properties`):
-```properties
-spring.datasource.url=${DATABASE_URL}
-spring.datasource.username=${DATABASE_USERNAME}
-spring.datasource.password=${DATABASE_PASSWORD}
+The `application.properties` file is **gitignored** to prevent committing sensitive credentials. The application supports environment variables for secure configuration.
+
+### Using Environment Variables (Recommended)
+
+Set these environment variables before running the application:
+
+**Linux/Mac:**
+```bash
+export DATABASE_URL=jdbc:postgresql://localhost:5432/jobportal
+export DATABASE_USERNAME=your_username
+export DATABASE_PASSWORD=your_password
 ```
+
+**Windows (Command Prompt):**
+```cmd
+set DATABASE_URL=jdbc:postgresql://localhost:5432/jobportal
+set DATABASE_USERNAME=your_username
+set DATABASE_PASSWORD=your_password
+```
+
+**Windows (PowerShell):**
+```powershell
+$env:DATABASE_URL="jdbc:postgresql://localhost:5432/jobportal"
+$env:DATABASE_USERNAME="your_username"
+$env:DATABASE_PASSWORD="your_password"
+```
+
+The application will automatically use these environment variables. If not set, it will fall back to default values or prompt for configuration.
+
+### Configuration Priority
+
+1. **Environment Variables** (Highest priority)
+2. **application.properties** file (if environment variables are not set)
+3. **Default values** (if neither is provided)
+
+### Removing Credentials from Git History
+
+If you've already committed sensitive data, you should:
+1. **Change your database password immediately** (if the repository is public)
+2. Remove the file from git tracking: 
+   ```bash
+   git rm --cached Backend/src/main/resources/application.properties
+   ```
+3. Commit the change: 
+   ```bash
+   git commit -m "Remove sensitive credentials from version control"
+   ```
+4. For sensitive projects, consider using `git filter-branch` or BFG Repo-Cleaner to remove from history
 
 ## 🤝 Contributing
 
